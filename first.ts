@@ -2,7 +2,7 @@ let a: string = "hello";
 a = 1234; //에러남
 
 const aa: string = "5"; //타입스크립트가 추론을 정확히 하면 굳이 이렇게 명시하지 말것.
-// 타입을 5라고 했는데 굳이 우리가 손찌검해서 타입이 문자열이 되었음
+// 타입을 5라고 했는데 굳이 우리가 손찌검해서 타입이 string이 되었음
 
 function add(x: number, y: number): number {
   // 결과 값을 따로 타입 안써줘도 result 가 number 라는 것을 안다. 단, 매개변수는 반드시 타입 명시해줘야함
@@ -38,7 +38,7 @@ const obj: { lat: number; lon: number } = { lat: 37.5, lon: 127.5 };
 // 4) Array<string>
 // 5) as
 // let aaa = 123;
-// aaa = 'hello' as unknown as number;
+// aaa = 'hello' as unknown as number; //as 는 앞의 타입을 강제로 다른애로 바꿔준다.
 
 //심화
 function add(x: number, y: number): number; //타입만
@@ -59,7 +59,7 @@ try {
 
 // ! : null 이나 undefined 가 아님을 보증함, 무조건 존재한다는 뜻 --> 비추, 이 세상에는 절대가 없음
 //대신에 if 문을 쓸것!!
-const head = document.querySelector("#head")!;
+const head: Element = document.querySelector("#head")!;
 if (head) {
   head.innerHTML = "hello world";
 }
@@ -131,3 +131,7 @@ interface B {
   a: string;
 }
 const xxxx: B = { a: "hello" };
+
+
+
+[1,2,3].map
